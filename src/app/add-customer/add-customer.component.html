@@ -1,0 +1,145 @@
+<!--
+<p>
+    add-customer works!
+</p>
+-->
+<!--
+<div *ngIf="is_edit">
+    Es EDIT
+</div>
+-->
+<div class="container" style="background-color:white">
+    <h1>Customers Form</h1><br>
+    <div id="" style="margin-top:30px; background-color:white" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading" style="background-color:black">
+                <div class="panel-title" style="background-color:black">Add Customer details</div>
+            </div>
+            <div class="panel-heading">
+                <div class="panel-title" style="text-align:center">
+                    <span *ngIf="!companyname.valid && companyname.touched" class="label label-warning">Company Name is required</span>
+                    <span *ngIf="!contactname.valid && contactname.touched" class="label label-warning">Contact Name is required</span>
+                    <span *ngIf="!contacttitle.valid && contacttitle.touched" class="label label-warning">Contact Title is required</span>
+                    <span *ngIf="!address.valid && address.touched" class="label label-warning">Address is required</span>
+                    <span *ngIf="!region.valid && region.touched" class="label label-warning">Region is required</span>
+                    <span *ngIf="!postalcode.valid && postalcode.touched" class="label label-warning">Postal Code is required</span>
+                    <span *ngIf="!city.valid && city.touched" class="label label-warning">City is required</span>
+                    <span *ngIf="!country.valid && country.touched" class="label label-warning">Country is required</span>
+                    <span *ngIf="!phone.valid && phone.touched" class="label label-warning">Phone is required</span>
+                    <span *ngIf="!fax.valid && fax.touched" class="label label-warning">Fax is required</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form #formCustomer="ngForm" (ngSubmit)="onSubmit()" id="form-customer" method="post" action=".">
+
+                    <div id="div_id_companyname" class="form-group required">
+                        <label for="id_companyname" class="control-label col-md-4">Company Name<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #companyname="ngModel" name="companyname" [(ngModel)]="customer.CompanyName" class="input-md textinput textInput form-control" id="id_companyname" maxlength="30" placeholder="Type Company Name" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_contactname" class="form-group required">
+                        <label for="id_contactname" class="control-label col-md-4  requiredField">Contact Name<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #contactname="ngModel" name="contactname" [(ngModel)]="customer.ContactName" class="input-md textinput form-control" id="id_contactname" placeholder="Type Contact Name" style="margin-bottom: 10px" type="email" required />
+                        </div>
+                    </div>
+                    <div id="div_id_contacttitle" class="form-group required">
+                        <label for="id_contacttitle" class="control-label col-md-4  requiredField">Contact Title<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #contacttitle="ngModel" name="contacttitle" [(ngModel)]="customer.ContactTitle" class="input-md textinput form-control" id="id_contacttitle" placeholder="Type Contact Title" style="margin-bottom: 10px" type="email" required />
+                        </div>
+                    </div>
+                    <div id="div_id_address" class="form-group required">
+                        <label for="id_address" class="control-label col-md-4  requiredField">Address<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #address="ngModel" name="address" [(ngModel)]="customer.Address" class="input-md textinput textInput form-control" id="id_address" placeholder="Type Customer Address" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_region" class="form-group required">
+                        <label for="id_region" class="control-label col-md-4  requiredField">Region<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #region="ngModel" name="region" [(ngModel)]="customer.Region" class="input-md textinput textInput form-control" id="id_region" placeholder="Type Region" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_postalcode" class="form-group required">
+                        <label for="id_postalcode" class="control-label col-md-4  requiredField">Postal Code<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #postalcode="ngModel" name="postalcode" [(ngModel)]="customer.PostalCode" class="input-md textinput textInput form-control" id="id_postalcode" placeholder="Type Postal Code" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_city" class="form-group required">
+                        <label for="id_city" class="control-label col-md-4  requiredField">Type City<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #city="ngModel" name="city" [(ngModel)]="customer.City" class="input-md textinput textInput form-control" id="id_city" placeholder="Type City" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_country" class="form-group required">
+                        <label for="id_country" class="control-label col-md-4  requiredField">Type Country<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #country="ngModel" name="country" [(ngModel)]="customer.Country" class="input-md textinput textInput form-control" id="id_country" placeholder="Type Country" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_phone" class="form-group required">
+                        <label for="id_phone" class="control-label col-md-4  requiredField">Phone<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #phone="ngModel" name="phone" [(ngModel)]="customer.Phone" class="input-md textinput textInput form-control" id="id_phone" placeholder="Type Phone" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+                    <div id="div_id_fax" class="form-group required">
+                        <label for="id_fax" class="control-label col-md-4  requiredField">Fax<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <input #fax="ngModel" name="fax" [(ngModel)]="customer.Fax" class="input-md textinput textInput form-control" id="id_fax" placeholder="Type Fax" style="margin-bottom: 10px" type="text" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="controls col-md-offset-4 col-md-8 ">
+                            <div id="div_id_hired" class="checkbox required">
+                                <label for="id_hired" class="control-label requiredField">
+                                         <input #hired="ngModel" [(ngModel)]="customer.Hired" name="hired" type="checkbox" />   <!-- class="input-ms checkboxinput" id="id_hired" style="margin-bottom: 10px" -->
+                                         <strong>Hired</strong>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="controls col-md-offset-4 col-md-8 ">
+                            <div id="div_id_active" class="checkbox required">
+                                <label for="id_active" class=" requiredField">
+                                         <input #active="ngModel" [(ngModel)]="customer.Active" name="active" type="checkbox" />
+                                         <strong>Active</strong>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <div class="aab controls col-md-4"></div>
+                        <div class="controls col-md-8" id="outer">
+                            <input type="submit" name="Signup" value="Add information" [disabled]="!formCustomer.form.valid" class="btn-primary btn-md btn btn-info" />
+                            <!-- Modify disabled property for the valid form -->
+                            <div *ngIf="is_edit" class="inner">
+                                | <a class="btn btn-warning btn-md" href="/customer">Cancel</a>
+                            </div>
+                            <!--
+                                <input type="button" name="Signup" value="Add information" class="btn btn btn-primary" id="button-id-signup" />
+                                -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="col-sm-6" style="text-align:right">
+    <div class="col-sm-6 content-footer">
+        <p>
+            Carlos Alberto Martinez Martin del Campo © - 2017
+        </p>
+    </div>
+</div>

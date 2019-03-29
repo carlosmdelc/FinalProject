@@ -1,0 +1,22 @@
+<p>
+    edit-customer works!
+</p>
+
+<div *ngIf="!customer">
+    <p>Loading Customers...</p>
+</div>
+
+<div *ngIf="customer">
+    <p>{{customer.ID}} {{customer.CompanyName}} {{customer.ContactName}} {{customer.ContactTitle}} {{customer.Address}} {{customer.Region}} {{customer.PostalCode}} {{customer.City}} {{customer.Country}} {{customer.Phone}} {{customer.Fax}} {{customer.Hired}}
+        {{customer.Active}}
+    </p>
+</div>
+
+
+<!--
+<p>
+    add-customer works!
+</p>
+-->
+
+<!-- <input type="button" name="Signup" value="Add information" class="btn btn btn-primary" id="button-id-signup" /> -->

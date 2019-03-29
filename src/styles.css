@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.circle:hover {
+    border-radius: 50%;
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+footer {
+    padding: 30px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px;
+        /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+
+p {
+    text-align: justify;
+}
+
+p.justify:hover {
+    border-bottom-style: solid;
+    border-top-style: solid;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+.fondoAzul {
+    background: lightblue;
+}
+
+.fondoVerde {
+    background: lightgreen;
+}
+
+.letraGrande {
+    font-size: 35px;
+}
+
+span.isactive {
+    color: #5cb85c;
+    font-size: 14px;
+}
+
+span.isnotactive {
+    color: #d9534f;
+    font-size: 14px;
+}
+
+.title {
+    color: #2BBCDE;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: normal;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.media-photo {
+    width: 65px;
+}
+
+.summary {
+    font-size: 14px;
+}
+
+#outer {
+    width: 100%;
+    text-align: center;
+}
+
+.inner {
+    display: inline-block;
+}

@@ -1,0 +1,162 @@
+<!--
+<p>
+    {{title}}
+</p>
+
+<hr>
+
+<div *ngIf="parameter">
+    Parameter sent: {{parameter}}
+</div>
+
+<div *ngIf="!parameter">
+    <button (click)="redirection()">Redirect to page with parameters</button>
+</div>
+
+
+<div class="container">
+    <h1>Contact Address</h1><br>
+    <div class="row text-center">
+        <div class="col-sm-2 col-xs-6 first-box">
+            <h1><span class="glyphicon glyphicon-earphone"></span></h1>
+            <h3>Phone</h3>
+            <p>+880-1700-987654</p><br>
+        </div>
+        <div class="col-sm-3 col-xs-6 second-box">
+            <h1><span class="glyphicon glyphicon-home"></span></h1>
+            <h3>Location</h3>
+            <p>Aguascalientes, Ags, MX</p><br>
+        </div>
+        <div class="col-sm-3 col-xs-6 third-box">
+            <h1><span class="glyphicon glyphicon-send"></span></h1>
+            <h3>E-mail</h3>
+            <p>carlosalbertom@hexaware.com</p><br>
+        </div>
+        <div class="col-sm-4 col-xs-6 fourth-box">
+            <h1><span class="glyphicon glyphicon-leaf"></span></h1>
+            <h3>Web</h3>
+            <p><a href="http://customerswebapi.azurewebsites.net">Customer WEB API</a></p><br>
+        </div>
+    </div>
+</div>
+
+-->
+
+<div class="container">
+
+    <div class="row">
+        <h1> Contact </h1>
+        <hr>
+        <div class="col-sm-12" id="parent">
+            <div class="col-sm-6">
+                <iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ-9nkOhTsKYQRIFKcZ3hpAQQ&key=AIzaSyAf64FepFyUGZd3WFWhZzisswVx2K37RFY" allowfullscreen></iframe>
+            </div>
+
+            <div class="col-sm-6">
+                <form action="" class="contact-form" method="post">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="nm" placeholder="Name" required="" autofocus="">
+                    </div>
+
+
+                    <div class="form-group form_left">
+                        <input type="email" class="form-control" id="email" name="em" placeholder="Email" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Type Your Message/Feedback here..." required=""></textarea>
+                        <br>
+                        <button id="Send" (click)="sendInfo()" class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Send </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container second-portion">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                        <div class="info">
+                            <br />
+                            <h3 class="title">MAIL & WEBSITE</h3>
+                            <p>
+                                <i class="fa fa-envelope" aria-hidden="true"></i> carlosalbertom@hexaware.com
+                                <br>
+                                <br>
+                                <i class="fa fa-globe" aria-hidden="true"></i> www.hexaware.com
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                        <div class="info">
+                            <br />
+                            <h3 class="title">CONTACT</h3>
+                            <p>
+                                <i class="fa fa-mobile" aria-hidden="true"></i> (+52)- 1 4491147418
+                                <br>
+                                <br>
+                                <i class="fa fa-mobile" aria-hidden="true"></i> (+52)- 1 7567065254
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="info">
+                            <br />
+                            <h3 class="title">ADDRESS</h3>
+                            <p>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i> Red Bone Guitar Boutique, Office no.33 , 2nd floor , Aguascalientes, Aguascalientes, Mexico, C.P. 20010. Visit US
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+        </div>
+        <hr />
+    </div>
+
+    <div id="comments">
+        Dear <label id="_name" for="_name"></label>, if the information provided below is correct click on button to send it. <br /> Your email is: <label id="_email" for="_email"></label> <br /> Your phone: <label id="_phone" for="_phone"></label> <br
+        /> Feedback: <label id="_comment" for="_comment"></label> <br />
+
+        <button id="Send" (click)="hideCommentDiv()" class="btn btn-default btn-send"> <span class="glyphicon glyphicon-floppy-saved"></span> Contact Me </button>
+        <hr />
+    </div>
+
+    <div id="confirmation">
+        <h1>Information sent. An executive will contact you shortly... Thank you.</h1>
+        <hr />
+    </div>
+
+
+    <div class="content-footer">
+        <p>
+            Carlos Alberto Martinez Martin del Campo © - 2017
+        </p>
+    </div>
+</div>
